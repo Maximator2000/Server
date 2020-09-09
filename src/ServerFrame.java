@@ -5,4 +5,5 @@ public class ServerFrame {
     private JTextField portTextField;
     private JButton startButton;
     private JButton closeButton;
+    private JTextArea Log;
 }
