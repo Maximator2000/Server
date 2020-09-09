@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.datenbanken.msaccess;
+package datenbanken.msaccess;
 
 /**
  * <p>

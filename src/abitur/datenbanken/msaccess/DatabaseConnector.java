@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.datenbanken.msaccess;
+package datenbanken.msaccess;
 
 import KAGO_framework.model.abitur.datenstrukturen.Queue;
 

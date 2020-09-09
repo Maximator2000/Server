@@ -1,8 +1,8 @@
-package KAGO_framework.model.abitur.datenbanken.mysql;
+package datenbanken.sqllite;
 
 /**
  * <p>
- * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018.
+ * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018
  * </p>
  * <p>
  * Klasse QueryResult

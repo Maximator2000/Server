@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.datenbanken.sqllite;
+package datenbanken.sqllite;
 
 import KAGO_framework.model.abitur.datenstrukturen.Queue;
 

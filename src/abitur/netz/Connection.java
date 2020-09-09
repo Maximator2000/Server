@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.netz; /**
+package netz; /**
  * <p>
  * Materialien zu den zentralen NRW-Abiturpruefungen im Fach Informatik ab 2018
  * </p>

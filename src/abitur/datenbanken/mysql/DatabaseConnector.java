@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.datenbanken.mysql;
+package datenbanken.mysql;
 
 import KAGO_framework.model.abitur.datenstrukturen.Queue;
 

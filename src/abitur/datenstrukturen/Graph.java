@@ -1,4 +1,4 @@
-package KAGO_framework.model.abitur.datenstrukturen;
+package datenstrukturen;
 
 import KAGO_framework.model.abitur.datenstrukturen.Edge;
 
