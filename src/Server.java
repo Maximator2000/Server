@@ -7,6 +7,8 @@ public class Server {
     private JButton closeButton;
     private JScrollBar scrollBar1;
     private JTextArea textArea1;
+    private JPanel jPanel;
+    private JFrame frame;
 
     public Server(){
         portTextField = new JTextField();
@@ -15,6 +17,13 @@ public class Server {
         closeButton   = new JButton();
         scrollBar1    = new JScrollBar();
         textArea1     = new JTextArea();
+
+        frame = new JFrame();
+        frame.setContentPane(jPanel);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(400,300);
+        frame.setLocation(100,100);
 
     }
 }
