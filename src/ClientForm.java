@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ClientForm {
     private JPanel panel;
@@ -27,12 +29,23 @@ public class ClientForm {
         frame.setVisible(true);
         frame.setSize(600,400);
         frame.setLocation(650,100);
+        frame.setDefaultCloseOperation(1);
 
 
-
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
 
     }
 
+    public JFrame getFrame() {
+        return frame;
+    }
 
-
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
+    }
 }

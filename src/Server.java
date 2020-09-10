@@ -1,4 +1,6 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Server {
     private JTextField portTextField;
@@ -8,6 +10,7 @@ public class Server {
     private JScrollBar scrollBar1;
     private JTextArea textArea1;
     private JPanel jPanel;
+    private JTextField serverTextField;
     private JFrame frame;
 
     public Server(){
@@ -25,5 +28,19 @@ public class Server {
         frame.setSize(400,300);
         frame.setLocation(100,100);
 
+        closeButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispose();
+            }
+        });
+    }
+
+    public JFrame getFrame() {
+        return frame;
+    }
+
+    public void setFrame(JFrame frame) {
+        this.frame = frame;
     }
 }
