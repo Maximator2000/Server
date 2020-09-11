@@ -12,10 +12,9 @@ public class Server  {
     private JPanel jPanel;
     private JTextField serverTextField;
     private JFrame frame;
+    private String port;
 
     public Server(){
-
-
         portTextField = new JTextField();
         passwordField1= new JPasswordField();
         startButton   = new JButton();
@@ -46,6 +45,4 @@ public class Server  {
     public void setFrame(JFrame frame) {
         this.frame = frame;
     }
-
-
 }

@@ -39,6 +39,12 @@ public class ClientForm {
             }
         });
 
+        connectButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        });
     }
 
     public JFrame getFrame() {
