@@ -1,7 +1,7 @@
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 
 public class ClientForm {
 
@@ -9,24 +9,25 @@ public class ClientForm {
 
     private JPanel panel;
     private JTextField clientTextField;
-    private JTextField nameField;
+    private JTextField nameField1;
     private JTextField remotalIPField2;
     private JTextField portTextField;
-    private JTextField textField1;
-    private JTextField textField5;
+    private JTextField nameField;
+    private JTextField portField;
     private JButton connectButton;
-    private JTextField textField2;
+    private JTextField nachrichtFeld;
     private JButton sendButton;
     private JTextField receivedTextField;
     private JButton closeButton;
     private JTextArea textArea1;
     private JScrollBar scrollBar1;
-    private JTextField textField3;
+    private JTextField ipField;
+    private JTextField textField1;
     private JScrollPane scrollPane;
     private JFrame frame;
 
     public ClientForm(){
-        tClient=new TestClient("127.0.0.1",51231);
+        //tClient=new TestClient("127.0.0.1",51231);
 
         frame= new JFrame();
         frame.setContentPane(panel);
@@ -44,10 +45,22 @@ public class ClientForm {
             }
         });
 
+
         connectButton.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                tClient.send(textArea1.getText());
+            public void actionPerformed(ActionEvent e) {
+                tClient=new TestClient("127.0.0.1", Controller.SERVER_PORT);
+                System.out.println("Eine Verbindung zum Server wurde von "+ nameField.getText()+" hergestellt");
+            }
+        });
+        sendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(tClient!=null){
+                    tClient.send(nachrichtFeld.getText());
+                    System.out.println("Ein Nachricht an den Server wurde von "+ nameField.getText()+" gesendet");
+
+                }
             }
         });
     }

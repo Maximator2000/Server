@@ -2,29 +2,23 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ServerForm  {
-    private JTextField portTextField;
-    private JPasswordField passwordField1;
+public class ServerView {
+    private ServerProgramCode serverProgramCode;
+
     private JButton startButton;
     private JButton closeButton;
     private JScrollBar scrollBar1;
     private JTextArea textArea1;
-    private JPanel jPanel;
+    private JTextField portTextField;
     private JTextField serverTextField;
+    private JPanel jPanel;
     private JFrame frame;
-    private ServerProgramCode serverProgramCode;
 
-    public ServerForm(){
+    public ServerView(){
 
-        serverProgramCode = new ServerProgramCode(51231,this);
-        portTextField = new JTextField();
-        passwordField1= new JPasswordField();
-        startButton   = new JButton();
-        closeButton   = new JButton();
-        scrollBar1    = new JScrollBar();
-        textArea1     = new JTextArea();
 
-        frame = new JFrame();
+    frame = new JFrame();
+        System.out.println(textArea1);
         frame.setContentPane(jPanel);
         frame.pack();
         frame.setVisible(true);
@@ -33,9 +27,17 @@ public class ServerForm  {
         frame.setResizable(false);
 
         closeButton.addActionListener(new ActionListener() {
-            @Override
+        @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispose();
+             }
+        });
+
+        startButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                serverProgramCode=new ServerProgramCode(Integer.parseInt(portTextField.getText()),ServerView.this);
+                System.out.println("Ein Server stellt seine Dienste bereit");
             }
         });
     }
@@ -50,7 +52,7 @@ public class ServerForm  {
 
     public void erhalte(){
 
-            serverProgramCode.processMessage("127.0.0.1",51231,"EHRE");
+        serverProgramCode.processMessage("127.0.0.1",51231,"EHRE");
 
     }
 
