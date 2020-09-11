@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ClientForm {
+
+    TestClient tClient;
+
     private JPanel panel;
     private JTextField clientTextField;
     private JTextField nameField;
@@ -23,6 +26,8 @@ public class ClientForm {
     private JFrame frame;
 
     public ClientForm(){
+        tClient=new TestClient("127.0.0.1",51231);
+
         frame= new JFrame();
         frame.setContentPane(panel);
         frame.pack();
@@ -42,7 +47,7 @@ public class ClientForm {
         connectButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-
+                tClient.send(textArea1.getText());
             }
         });
     }
