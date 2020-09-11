@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Server extends  {
+public class Server  {
     private JTextField portTextField;
     private JPasswordField passwordField1;
     private JButton startButton;
@@ -12,9 +12,10 @@ public class Server extends  {
     private JPanel jPanel;
     private JTextField serverTextField;
     private JFrame frame;
-    private String port;
 
     public Server(){
+
+
         portTextField = new JTextField();
         passwordField1= new JPasswordField();
         startButton   = new JButton();
@@ -45,4 +46,6 @@ public class Server extends  {
     public void setFrame(JFrame frame) {
         this.frame = frame;
     }
+
+
 }
