@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Server {
+public class Server extends  {
     private JTextField portTextField;
     private JPasswordField passwordField1;
     private JButton startButton;
@@ -12,6 +12,7 @@ public class Server {
     private JPanel jPanel;
     private JTextField serverTextField;
     private JFrame frame;
+    private String port;
 
     public Server(){
         portTextField = new JTextField();
@@ -27,6 +28,7 @@ public class Server {
         frame.setVisible(true);
         frame.setSize(400,300);
         frame.setLocation(100,100);
+        frame.setResizable(false);
 
         closeButton.addActionListener(new ActionListener() {
             @Override
