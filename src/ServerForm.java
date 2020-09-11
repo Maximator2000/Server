@@ -1,8 +1,8 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.ActionListener;import java.awt.event.ComponentAdapter;
 
-public class Server  {
+public class ServerForm  {
     private JTextField portTextField;
     private JPasswordField passwordField1;
     private JButton startButton;
@@ -12,10 +12,11 @@ public class Server  {
     private JPanel jPanel;
     private JTextField serverTextField;
     private JFrame frame;
+    private ServerProgramCode serverProgramCode;
 
-    public Server(){
+    public ServerForm(){
 
-
+        serverProgramCode = new ServerProgramCode(51231,this);
         portTextField = new JTextField();
         passwordField1= new JPasswordField();
         startButton   = new JButton();
@@ -37,7 +38,7 @@ public class Server  {
                 frame.dispose();
             }
         });
-    }
+    textArea1.addComponentListener(new ComponentAdapter() { } );}
 
     public JFrame getFrame() {
         return frame;
@@ -47,5 +48,13 @@ public class Server  {
         this.frame = frame;
     }
 
+    public void erhalte(){
 
+            serverProgramCode.processMessage("127.0.0.1",51231,"EHRE");
+
+    }
+
+    public JTextArea getTextArea1() {
+        return textArea1;
+    }
 }

@@ -1,8 +1,14 @@
 import netz.Server;
 
 public class ServerProgramCode extends Server {
-    public ServerProgramCode(int pPort) {
+    private String clientAdress;
+    private ServerForm server;
+    public ServerProgramCode(int pPort, ServerForm serverForm) {
+
         super(pPort);
+        this.server = serverForm;
+
+
     }
 
     @Override
@@ -13,7 +19,7 @@ public class ServerProgramCode extends Server {
 
     @Override
     public void processMessage(String pClientIP, int pClientPort, String pMessage) {
-
+        server.getTextArea1().setText(pMessage);
     }
 
     @Override
