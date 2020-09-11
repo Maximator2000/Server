@@ -1,6 +1,6 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;import java.awt.event.ComponentAdapter;
+import java.awt.event.ActionListener;
 
 public class ServerForm  {
     private JTextField portTextField;
@@ -38,7 +38,7 @@ public class ServerForm  {
                 frame.dispose();
             }
         });
-    textArea1.addComponentListener(new ComponentAdapter() { } );}
+    }
 
     public JFrame getFrame() {
         return frame;
