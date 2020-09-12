@@ -48,7 +48,7 @@ public class ServerView {
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                serverProgramCode.sende("127.0.0.1",53221,messageTextField.getText());
+                serverProgramCode.sende(messageTextField.getText());
                 System.out.println("Nachricht gesendet   Inhalt:  "+messageTextField.getText());
 
             }

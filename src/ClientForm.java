@@ -1,3 +1,6 @@
+import Datenstrukturen.List;
+import netz.Client;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -5,7 +8,7 @@ import java.awt.event.ActionListener;
 
 public class ClientForm {
 
-    TestClient tClient;
+    private List<TestClient> tClient;
 
     private JPanel panel;
     private JTextField clientTextField;
@@ -23,12 +26,13 @@ public class ClientForm {
     private JScrollBar scrollBar1;
     private JTextField ipField;
     private JTextField textField1;
+    private JButton nextButton;
     private JScrollPane scrollPane;
     private JFrame frame;
 
     public ClientForm(){
-        //tClient=new TestClient("127.0.0.1",51231);
 
+        tClient=new List();
         frame= new JFrame();
         frame.setContentPane(panel);
         frame.pack();
@@ -49,19 +53,34 @@ public class ClientForm {
         connectButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                tClient=new TestClient("127.0.0.1", Controller.SERVER_PORT);
-                System.out.println("Eine Verbindung zum Server wurde von "+ nameField.getText()+" hergestellt");
+                if (!ipField.getText().isEmpty() && !portField.getText().isEmpty()) {
+                    tClient.append(new TestClient(ipField.getText(), Integer.parseInt(portField.getText()), ClientForm.this));
+                    tClient.toLast();
+                    tClient.getContent().setName(nameField.getText());
+                    System.out.println("Eine Verbindung zum Server wurde von " + nameField.getText() + " hergestellt");
+                }
             }
         });
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(tClient!=null){
-                    tClient.send(nachrichtFeld.getText());
+                if(!tClient.isEmpty()){
+                    tClient.getContent().send(nachrichtFeld.getText());
                     System.out.println("Ein Nachricht an den Server wurde von "+ nameField.getText()+" gesendet");
 
                 }
             }
+        });
+        nextButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (!tClient.isEmpty())
+                    tClient.next();
+                    if (!tClient.hasAccess()) {
+                        tClient.toFirst();
+                     }
+                    nameField.setText(tClient.getContent().getName());
+                 }
         });
     }
 
@@ -71,5 +90,9 @@ public class ClientForm {
 
     public void setFrame(JFrame frame) {
         this.frame = frame;
+    }
+
+    public JTextArea getTextArea1() {
+        return textArea1;
     }
 }
