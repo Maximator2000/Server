@@ -31,4 +31,8 @@ public class ServerProgramCode extends Server {
     public void processClosingConnection(String pClientIP, int pClientPort) {
 
     }
+
+    public void sende(String ip, int port, String message ){
+        send(ip,port,message);
+    }
 }

@@ -14,6 +14,8 @@ public class ServerView {
     private JTextField portTextField;
     private JTextField serverTextField;
     private JPanel jPanel;
+    private JTextField messageTextField;
+    private JButton sendButton;
     private JFrame frame;
 
     public ServerView(){
@@ -42,6 +44,13 @@ public class ServerView {
                 System.out.println("Ein Server stellt seine Dienste bereit");
             }
         });
+
+        sendButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                serverProgramCode.sende("127.0.0.1",53221,messageTextField.getText());
+            }
+        });
     }
 
     public JFrame getFrame() {
@@ -52,14 +61,7 @@ public class ServerView {
         this.frame = frame;
     }
 
-    public void erhalte(String ip, int port, String message){
 
-        serverProgramCode.processMessage(ip,port,message);
-
-    }
-    public void sende(String ip, int port, String message ){
-        serverProgramCode.send(ip,port,message);
-    }
 
     public JTextArea getTextArea1() {
         return textArea1;
