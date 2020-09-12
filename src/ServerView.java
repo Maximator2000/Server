@@ -1,3 +1,5 @@
+import netz.Client;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -50,10 +52,13 @@ public class ServerView {
         this.frame = frame;
     }
 
-    public void erhalte(){
+    public void erhalte(String ip, int port, String message){
 
-        serverProgramCode.processMessage("127.0.0.1",51231,"EHRE");
+        serverProgramCode.processMessage(ip,port,message);
 
+    }
+    public void sende(String ip, int port, String message ){
+        serverProgramCode.send(ip,port,message);
     }
 
     public JTextArea getTextArea1() {
